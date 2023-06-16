@@ -1,0 +1,10 @@
+﻿1. Implement binary search procedure using divide and conquer method.
+2. Implement divide and conquer method for finding the maximum and minimum number.
+3. Write a program to measure the performance using time function between bubble sort and quick sort.
+4. Implement the fractional knapsack problem that will generate an optimal solution for the given set of instance.
+5. Implement the 0/1 knapsack problem that will generate an optimal solutions for the given set of instance such as no of elements n, cost p, and weight wi
+6. Write a program to find the minimum cost spanning tree using Prim's algorithm.
+7. Write a program to find the single source shortest path.
+8. Write a program to implement dynamic programming method for all pair's shortest path problem.
+9. Using backtracking algorithm implement N-queens problem.
+10. Write a program for coloring a graph.
