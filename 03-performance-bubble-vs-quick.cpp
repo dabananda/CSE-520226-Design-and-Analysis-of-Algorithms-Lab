@@ -47,10 +47,10 @@ int main() {
   start = clock();
   bubbleSort(arr, size);
   end = clock();
-  cout << "Time taken by Bubble sort: " << (end - start) << endl;
+  cout << "Time taken by Bubble sort: " << difftime(end, start) << endl;
   start = clock();
   quickSort(arr, 0, size - 1);
   end = clock();
-  cout << "Time taken by Quick sort: " << (end - start) << endl;
+  cout << "Time taken by Quick sort: " << difftime(end, start) << endl;
   return 0;
 }
