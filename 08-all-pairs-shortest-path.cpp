@@ -1,47 +1,39 @@
-#include <algorithm>
+// Dabananda Mitra, CSE (2019-20), ISTT.
+// Email: imdmitra@outlook.com
+
 #include <iostream>
-#define MAX 50
+#include <algorithm>
+#define v 10
 
 using namespace std;
 
-void allPath(int G[MAX][MAX], int n) {
-  int A[n][n], i, j, k, x, y;
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      A[i][j] = G[i][j];
-    }
-  }
-  for (k = 0; k < n; k++) {
-    for (i = 0; i < n; i++) {
-      for (j = 0; j < n; j++) {
-        A[i][j] = min(A[i][j], A[i][k] + A[k][j]);
+int g[v][v];
+
+void floydWarshall(int n) {
+  for (int k = 0; k < n; k++) {
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        g[i][j] = min(g[i][j], g[i][k] + g[k][j]);
       }
     }
   }
-  cout << "Enter the source node: ";
-  cin >> x;
-  cout << "Enter the destination node: ";
-  cin >> y;
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      cout << A[i][j] << " ";
-    }
-    cout << endl;
-  }
-  cout << "Shortest path between source and destination is: " << A[x - 1][y - 1] << endl;
 }
 
 int main() {
-  int G[MAX][MAX], i, j, n;
-  cout << "Enter number of vertex: ";
+  int n;
   cin >> n;
-  cout << "Enter the adjacency matrix:" << endl;
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      cin >> G[i][j];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      cin >> g[i][j];
     }
   }
-  allPath(G, n);
+  floydWarshall(n);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      cout << g[i][j] << " ";
+    }
+    cout << endl;
+  }
 
   return 0;
 }
